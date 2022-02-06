@@ -63,22 +63,7 @@
         'Nog steeds niet. Inmiddels is het een personal best voor GJ om zolang niet te kakken. Dat is wel weer laaion.'
       ];
 
-      var selected = 0;
-
-      try {
-        selected = parseInt(localStorage.getItem('selected'));
-        selected += 1;
-        if (selected > sentences.length - 1) {
-          selected = 0;
-        }
-      } catch (error) {
-        selected = 0;
-        console.log(error);
-      }
-
-      localStorage.setItem('selected', selected);
-
-      // const selected = Math.floor(Math.random() * sentences.length);
+      var selected = Math.floor(Math.random() * sentences.length);
       element.innerHTML = sentences[selected];
 
       if (selected === 0) {
