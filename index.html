@@ -41,6 +41,7 @@
         <br><br>
         <h1 style="font-weight: bold;">NEE</h1>
         <p style="font-size: 1.75rem;" id="sentence"></p>
+
       </div>
     </div>
   </div>
@@ -50,14 +51,27 @@
       var element = document.getElementById('sentence');
 
       var sentences = [
+        `Liggend ken je scheiten maar 't is beter als je zit.`,
+        'Nee, en dan te bedenken dat z\'n laatste echte maaltijd chili sin carne was...',
+        'Daar is ie veel te high voor, joh! Laaaaaiiooon.',
+        'Nee joh, nog steeds niet. Anders had je het echt wel geroken. Zelfs in Nederland.',
         'Dat is niet zo laaion maar check het snel weer want misschien eet hij nu wel een blokje kaas.',
         'Dat is niet zo laaion maar de zuster geeft nu laxeermiddel dus kom snel terug.',
         'Laaion? Dacht het niet. Maar je kent GJ nog niet als je denkt dat hij niet ieder moment kan gaan scheiten nu.',
         'Nog steeds niet. Inmiddels is het een personal best voor GJ om zolang niet te kakken. Dat is wel weer laaion.'
       ];
 
-      const selected = Math.floor(Math.random() * sentences.length);
+      const selected = 0;//Math.floor(Math.random() * sentences.length);
       element.innerHTML = sentences[selected];
+
+      
+
+      if (selected === 0) {
+        var a = document.createElement('a');
+        a.setAttribute('href', 'https://youtu.be/pjqBQu0Tn14?t=75');
+        a.innerHTML = 'Bronvermelding';
+        element.appendChild(a);
+      }
     }
   </script>
 
