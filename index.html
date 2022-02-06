@@ -53,7 +53,7 @@
       var element = document.getElementById('sentence');
 
       var sentences = [
-        `Liggend ken je scheiten maar 't is beter als je zit.`,
+        `Liggend ken je scheiten maar 't is beter als je zit. `,
         'Nee, en dan te bedenken dat z\'n laatste echte maaltijd chili sin carne was...',
         'Daar is ie veel te high voor, joh! Laaaaaiiooon.',
         'Nee joh, nog steeds niet. Anders had je het echt wel geroken. Zelfs in Nederland.',
@@ -63,10 +63,23 @@
         'Nog steeds niet. Inmiddels is het een personal best voor GJ om zolang niet te kakken. Dat is wel weer laaion.'
       ];
 
-      const selected = Math.floor(Math.random() * sentences.length);
-      element.innerHTML = sentences[selected];
+      var selected = 0;
 
-      
+      try {
+        selected = parseInt(localStorage.getItem('selected'));
+        selected += 1;
+        if (selected > sentences.length - 1) {
+          selected = 0;
+        }
+      } catch (error) {
+        selected = 0;
+        console.log(error);
+      }
+
+      localStorage.setItem('selected', selected);
+
+      // const selected = Math.floor(Math.random() * sentences.length);
+      element.innerHTML = sentences[selected];
 
       if (selected === 0) {
         var a = document.createElement('a');
