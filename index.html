@@ -53,7 +53,8 @@
       var element = document.getElementById('sentence');
 
       var sentences = [
-        `Liggend ken je scheiten maar 't is beter als je zit. `,
+      ``,
+        `Neem intussen een Klopfer. `,
         'Nee, en dan te bedenken dat z\'n laatste echte maaltijd chili sin carne was...',
         'Daar is ie veel te high voor, joh! Laaaaaiiooon.',
         'Nee joh, nog steeds niet. Anders had je het echt wel geroken. Zelfs in Nederland.',
@@ -69,8 +70,13 @@
       if (selected === 0) {
         var a = document.createElement('a');
         a.setAttribute('href', 'https://youtu.be/pjqBQu0Tn14?t=75');
-        a.innerHTML = 'Bronvermelding';
+        a.innerHTML = `Liggend ken je scheiten maar 't is beter als je zit.`;
         element.appendChild(a);
+      } else if (selected === 1) {
+        var img = document.createElement('img');
+        img.setAttribute('src', 'images/klopfer.png');
+        img.setAttribute('width', '150');
+        element.appendChild(img);
       }
     }
   </script>
